@@ -2,15 +2,15 @@ export const skillsJson = {
   orbitNodes: [
     {
       id: "top",
-      ring: "inner",
-      positionClass: "top-[25%] left-[50%] -translate-x-1/2 -translate-y-1/2",
+      ring: "outer",
+      positionClass: "top-[13%] left-[50%] -translate-x-1/2 -translate-y-1/2",
       icon: "laptop",
       color: "text-purple-400 border-purple-500/40 shadow-purple-500/20",
     },
     {
       id: "bottom",
-      ring: "inner",
-      positionClass: "top-[75%] left-[50%] -translate-x-1/2 -translate-y-1/2",
+      ring: "outer",
+      positionClass: "top-[87%] left-[50%] -translate-x-1/2 -translate-y-1/2",
       icon: "mobile",
       color: "text-blue-400 border-blue-500/40 shadow-blue-500/20",
     },
@@ -57,7 +57,7 @@ export const skillsJson = {
         "Node.js",
         "Express.js",
         "RESTful APIs",
-        "GraphQL",
+        // "GraphQL",
         "JWT / Auth",
         "Socket.io",
       ],
@@ -72,7 +72,7 @@ export const skillsJson = {
       items: [
         "PostgreSQL",
         "MongoDB",
-        "MySQL",
+        // "MySQL",
         "Redis",
         "Prisma ORM",
         "Mongoose",
@@ -88,9 +88,9 @@ export const skillsJson = {
       items: [
         "Git & GitHub",
         "Docker",
-        "AWS (S3, EC2)",
-        "CI/CD",
-        "Nginx",
+        // "AWS (S3, EC2)",
+        // "CI/CD",
+        // "Nginx",
         "Vercel / Netlify",
       ],
     },
@@ -101,7 +101,12 @@ export const skillsJson = {
       accentColor: "from-yellow-500 to-orange-500",
       borderColor: "border-yellow-900/30 hover:border-yellow-500/40",
       bulletColor: "bg-yellow-500",
-      items: ["Redux Toolkit", "Zustand", "React Query", "Context API"],
+      items: [
+        "Redux Toolkit",
+        "Zustand",
+        "React Query",
+        //    "Context API"
+      ],
     },
     {
       id: "other",
@@ -114,7 +119,7 @@ export const skillsJson = {
         "Responsive Design",
         "UI/UX Principles",
         "Problem Solving",
-        "Agile Methodology",
+        // "Agile Methodology",
         "Clean Code",
       ],
     },

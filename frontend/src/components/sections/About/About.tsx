@@ -70,7 +70,7 @@ export function About({ data, stats }: AboutProps) {
             <p className="text-slate-400 font-light leading-relaxed text-sm">
               {data.story}
             </p>
-            <div className="p-6 rounded-2xl bg-gradient-to-tr from-slate-950 to-slate-900/50 border border-white/5">
+            <div className="p-6 rounded-2xl bg-linear-to-tr from-slate-950 to-slate-900/50 border border-white/5">
               <h4 className="text-xs font-bold text-cyan-400 uppercase tracking-widest mb-2">{`// MISSION DIRECTIVE`}</h4>
               <p className="text-slate-300 text-sm font-light leading-relaxed">
                 {data.mission}

@@ -1,7 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-
-import React from "react";
 import {
   FaCode,
   FaServer,
@@ -86,10 +84,8 @@ export default function MySkills() {
 
       {/* --- MAIN DISPLAY --- */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-7xl mx-auto items-center relative z-10">
-        {/* LEFT COLUMN: The Exact Skill Orbit/Radar Vector Graphics */}
-        <div className="lg:col-span-5 flex justify-center items-center relative h-105 w-full">
-          <div className="relative w-95 h-95 md:w-105 md:h-105">
-            {/* SVG Vector Layer for Flawless Circles and Octagon */}
+        <div className="lg:col-span-5 flex justify-center items-center relative h-140 w-full overflow-hidden">
+          <div className="relative w-120 h-120 md:w-135 md:h-135 flex items-center justify-center">
             <svg
               viewBox="0 0 400 400"
               className="absolute inset-0 w-full h-full pointer-events-none overflow-visible"
@@ -117,29 +113,12 @@ export default function MySkills() {
                 </linearGradient>
               </defs>
 
-              {/* Outer Faint Octagonal Wireframe Frame */}
-              <polygon
-                points="200,8 335,64 392,200 335,336 200,392 65,336 8,200 65,64"
-                fill="none"
-                stroke="#1e293b"
-                strokeWidth="1.5"
-                strokeOpacity="0.6"
-              />
-              <polygon
-                points="200,20 322,72 380,200 322,328 200,380 78,328 20,200 78,72"
-                fill="none"
-                stroke="#334155"
-                strokeWidth="1"
-                strokeOpacity="0.2"
-              />
-
               <path
                 d="M 200 50 A 150 150 0 0 0 200 350"
                 fill="none"
                 stroke="url(#purpleGlow)"
                 strokeWidth="2"
               />
-              {/* Right Half - Dashed Blue */}
               <path
                 d="M 200 50 A 150 150 0 0 1 200 350"
                 fill="none"
@@ -148,8 +127,7 @@ export default function MySkills() {
                 strokeDasharray="5 5"
               />
 
-              {/* INNER TRACK (Radius 100) */}
-              {/* Left Half - Solid Purple */}
+              {/* Inner Track */}
               <path
                 d="M 200 100 A 100 100 0 0 0 200 300"
                 fill="none"
@@ -157,7 +135,6 @@ export default function MySkills() {
                 strokeWidth="2"
                 strokeDasharray="2 2"
               />
-              {/* Right Half - Dashed Blue */}
               <path
                 d="M 200 100 A 100 100 0 0 1 200 300"
                 fill="none"
@@ -167,40 +144,39 @@ export default function MySkills() {
               />
             </svg>
 
-            {skillsJson.orbitNodes.map((node: any) => (
-              <div
-                key={node.id}
-                className={`absolute p-2.5 rounded-full bg-[#040818] border-2 shadow-xl hover:scale-110 transition-transform duration-300 cursor-pointer ${node.positionClass} ${node.color}`}
-              >
-                <div className="w-5 h-5 flex items-center justify-center">
-                  <DynamicIcon name={node.icon} className="w-full h-full" />
+            <div className="absolute inset-0 animate-[spin_100s_linear_infinite] hover:[animation-play-state:paused]">
+              {skillsJson.orbitNodes.map((node: any) => (
+                <div
+                  key={node.id}
+                  className={`absolute p-3 rounded-full bg-[#040818] border-2 shadow-xl hover:scale-110 transition-transform duration-300 cursor-pointer ${node.positionClass} ${node.color}`}
+                >
+                  <div className="w-6 h-6 flex items-center justify-center animate-[spin_25s_linear_infinite] [animation-direction:reverse] parent-hover:paused">
+                    <DynamicIcon name={node.icon} className="w-full h-full" />
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
 
-            {/* Central Main Shield */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full bg-[#050b1a] border border-slate-800 flex flex-col items-center justify-center p-4 text-center shadow-[inset_0_0_20px_rgba(99,102,241,0.15)]">
-              <div className="text-3xl mb-1.5 bg-linear-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent font-bold">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-56 h-56 rounded-full bg-[#050b1a] border border-slate-800 flex flex-col items-center justify-center p-6 text-center shadow-[inset_0_0_25px_rgba(99,102,241,0.18)] z-10">
+              <div className="text-4xl mb-2 bg-linear-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent font-bold">
                 &lt;/&gt;
               </div>
-              <h3 className="text-lg font-bold leading-tight tracking-wide text-slate-100">
+              <h3 className="text-xl font-bold leading-tight tracking-wide text-slate-100">
                 Full Stack
                 <br />
                 Developer
               </h3>
-              <p className="text-[10px] text-slate-400 mt-2 max-w-32.5 leading-normal">
+              <p className="text-xs text-slate-400 mt-2.5 max-w-36 leading-normal">
                 Passionate about building impactful digital experiences
               </p>
             </div>
           </div>
         </div>
-
-        {/* RIGHT COLUMN: 3x2 Grid Cards Layout */}
         <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
           {skillsJson.categories.map((cat) => (
             <div
               key={cat.id}
-              className={`p-5 rounded-xl bg-[#060b21]/70 border backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 ${cat.borderColor}`}
+              className={`p-5 rounded-xl  border backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 ${cat.borderColor}`}
             >
               <div className="flex items-center gap-2.5 mb-5">
                 <div
@@ -230,7 +206,7 @@ export default function MySkills() {
       </div>
 
       <div className="mt-20 max-w-7xl mx-auto z-10 relative">
-        <div className="p-6 md:p-8 rounded-3xl bg-[#050b1a]/80 border border-slate-800/80 backdrop-blur-md flex flex-col xl:flex-row items-center justify-between gap-8">
+        <div className="p-6 md:p-8 rounded-3xl  border border-slate-800/80 backdrop-blur-md flex flex-col xl:flex-row items-center justify-between gap-8">
           {/* Label side */}
           <div className="text-center xl:text-left min-w-50">
             <h4 className="text-xl font-bold tracking-tight">Technologies</h4>
