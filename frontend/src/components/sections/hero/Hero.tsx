@@ -49,7 +49,7 @@ export const Hero: React.FC<HeroProps> = ({ data }) => {
       className="relative min-h-screen w-full flex items-center justify-center overflow-hidden px-4 sm:px-8 md:px-16 lg:px-24 py-20 select-none"
       aria-label="Introduction presentation section"
     >
-      <div className="absolute inset-0 z-0 bg-linear-to-br from-[#0F172A] via-[#111827] to-[#2563EB]/20" />
+      {/* <div className="absolute inset-0 z-0 bg-linear-to-br from-[#0F172A] via-[#111827] to-[#2563EB]/20" /> */}
 
       <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-purple-600/15 blur-[80px] sm:blur-[120px] animate-pulse pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-80 h-80 sm:w-112.5 sm:h-112.5 rounded-full bg-cyan-500/10 blur-[100px] sm:blur-[150px] pointer-events-none" />
