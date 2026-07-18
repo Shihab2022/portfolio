@@ -5,33 +5,12 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import * as Lucide from "lucide-react";
-import * as RiIcons from "react-icons/ri";
-import * as SiIcons from "react-icons/si";
-import * as BiIcons from "react-icons/bi";
-import * as DiIcons from "react-icons/di";
 import { Magnetic } from "../../animations/Magnetic";
 import { HeroData } from "../../../types/sections";
 import heroImage from "../../../../public/assets/shihab-hero-section.jpg";
 import { cn } from "@/src/utils/utils";
-
-const IconResolver = ({
-  name,
-  className,
-}: {
-  name: string;
-  className?: string;
-}) => {
-  const AllIcons: Record<string, any> = {
-    ...Lucide,
-    ...RiIcons,
-    ...SiIcons,
-    ...BiIcons,
-    ...DiIcons,
-  };
-  const ResolvedIcon = AllIcons[name];
-  if (!ResolvedIcon) return <Lucide.Terminal className={className} />;
-  return <ResolvedIcon className={className} />;
-};
+import { IconResolver } from "@/src/utils/IconResolver";
+import FloatingIconsSection from "../../animations/floatingIconsSection";
 
 export interface HeroProps {
   data: HeroData;
@@ -56,26 +35,7 @@ export const Hero: React.FC<HeroProps> = ({ data }) => {
       <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-purple-600/15 blur-[80px] sm:blur-[120px] animate-pulse pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-80 h-80 sm:w-112.5 sm:h-112.5 rounded-full bg-cyan-500/10 blur-[100px] sm:blur-[150px] pointer-events-none" />
 
-      <div className="absolute inset-0 pointer-events-none z-10 hidden md:block">
-        {data.floatingIcons.map((icon, idx) => (
-          <motion.div
-            key={idx}
-            className="absolute p-4 rounded-2xl border border-white/5 bg-slate-900/40 backdrop-blur-md shadow-2xl flex items-center justify-center text-slate-400"
-            style={{ left: `${icon.xOffset}%`, top: `${icon.yOffset}%` }}
-            animate={{ y: [0, -15, 0], rotate: [0, 5, -5, 0] }}
-            transition={{
-              duration: icon.duration,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          >
-            <IconResolver
-              name={icon.iconName}
-              className="w-6 h-6 sm:w-8 sm:h-8 opacity-60 hover:opacity-100 transition-opacity"
-            />
-          </motion.div>
-        ))}
-      </div>
+      <FloatingIconsSection iconsData={data.floatingIcons} />
 
       <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center z-20">
         <div className="lg:col-span-7 flex flex-col justify-center text-left space-y-6 sm:space-y-8">

@@ -1,60 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import {
-  FaCode,
-  FaServer,
-  FaDatabase,
-  FaRegStar,
-  FaLaptop,
-  FaCloud,
-  FaMobileAlt,
-  FaReact,
-  FaNodeJs,
-  FaGitAlt,
-  FaDocker,
-} from "react-icons/fa";
-import {
-  SiNextdotjs,
-  SiTypescript,
-  SiJavascript,
-  SiTailwindcss,
-  SiMongodb,
-  SiPostgresql,
-} from "react-icons/si";
-import { FiShare2 } from "react-icons/fi";
 import { skillsJson } from "@/src/data/skills";
+import { IconResolver } from "@/src/utils/IconResolver";
 
-const iconRegistry: any = {
-  code: FaCode,
-  server: FaServer,
-  database: FaDatabase,
-  cloud: FaCloud,
-  state: FiShare2,
-  star: FaRegStar,
-  laptop: FaLaptop,
-  mobile: FaMobileAlt,
-  react: FaReact,
-  nextjs: SiNextdotjs,
-  nodejs: FaNodeJs,
-  typescript: SiTypescript,
-  javascript: SiJavascript,
-  tailwind: SiTailwindcss,
-  mongodb: SiMongodb,
-  postgresql: SiPostgresql,
-  git: FaGitAlt,
-  docker: FaDocker,
-};
-
-const DynamicIcon = ({
-  name,
-  className,
-}: {
-  name: string;
-  className?: string;
-}) => {
-  const IconComponent = iconRegistry[name];
-  return IconComponent ? <IconComponent className={className} /> : null;
-};
 
 export default function MySkills() {
   return (
@@ -151,7 +99,7 @@ export default function MySkills() {
                   className={`absolute p-3 rounded-full bg-[#040818] border-2 shadow-xl hover:scale-110 transition-transform duration-300 cursor-pointer ${node.positionClass} ${node.color}`}
                 >
                   <div className="w-6 h-6 flex items-center justify-center animate-[spin_25s_linear_infinite] [animation-direction:reverse] parent-hover:paused">
-                    <DynamicIcon name={node.icon} className="w-full h-full" />
+                    <IconResolver name={node.icon} className="w-full h-full" />
                   </div>
                 </div>
               ))}
@@ -182,7 +130,7 @@ export default function MySkills() {
                 <div
                   className={`p-2 rounded-lg bg-linear-to-br ${cat.accentColor} text-white`}
                 >
-                  <DynamicIcon name={cat.icon} className="w-4 h-4" />
+                  <IconResolver name={cat.icon} className="w-4 h-4" />
                 </div>
                 <h4 className="text-md font-bold tracking-wide">{cat.title}</h4>
               </div>
@@ -227,7 +175,7 @@ export default function MySkills() {
                      border-slate-800 flex items-center justify-center transition-all
                       duration-300 hover:border-slate-700 hover:scale-105 hover:shadow-[0_0_15px_rgba(255,255,255,0.05)] cursor-pointer ${tech.color}`}
                 >
-                  <DynamicIcon
+                  <IconResolver
                     name={tech.icon}
                     className="w-6 h-6 transition-transform group-hover:scale-110"
                   />

@@ -1,14 +1,14 @@
 export const heroSectionData = {
   availability: {
     status: "available",
-    text: "Available for Senior Architect roles",
+    text: "Available for Full Stack Developer roles",
   },
   greeting: "Hello World, I'm",
-  name: "Shihab",
+  name: "Md Shihab Uddin",
   titles: [
-    "Senior Full Stack Engineer",
-    "Next.js Architect",
-    "UI/UX Systems Designer",
+    "Full Stack Developer",
+    // "Next.js Architect",
+    // "UI/UX Systems Designer",
   ],
   location: {
     city: "Rajshahi",
@@ -20,7 +20,7 @@ export const heroSectionData = {
     completedProjects: 42,
   },
   biographyShort:
-    "Architecting highly resilient, bleeding-edge web applications. Specializing in advanced GIS data engines, production-scale state management platforms, and distributed frontend layouts.",
+    "Full Stack Web Developer with 3.8+ years of professional experience building scalable, production-ready web applications using React, Next.js, Node.js, TypeScript and PostgreSQL. Specialized in GIS-powered platforms, secure APIs, and modern web experiences. I enjoy transforming complex business requirements into fast, reliable, and user-friendly digital experiences.",
   avatar: {
     src: "/assets/shihab-hero-section.png",
     alt: "Shihab Portrait Presentation",
@@ -36,9 +36,9 @@ export const heroSectionData = {
     },
     {
       label: "Source Code",
-      href: "https://github.com/shihab",
+      href: "https://github.com/shihab2022",
       variant: "outline",
-      icon: "Github",
+      icon: "FaGithub",
       isExternal: true,
     },
   ],
