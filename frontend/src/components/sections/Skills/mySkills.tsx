@@ -3,12 +3,11 @@
 import { skillsJson } from "@/src/data/skills";
 import { IconResolver } from "@/src/utils/IconResolver";
 
-
 export default function MySkills() {
   return (
     <section className="relative min-h-screen  text-white px-6 py-20 md:px-12 lg:px-20 overflow-hidden">
       <div className="flex flex-col items-center text-center mb-20 relative z-10">
-        <span className="inline-flex items-center gap-1.5 px-4 py-1 rounded-full text-[11px] font-bold tracking-[0.2em] text-indigo-400 bg-[#0a0f26] border border-indigo-500/20">
+        <span className="inline-flex items-center gap-1.5 px-4 py-1 rounded-full text-[11px] font-bold tracking-[0.2em] text-indigo-400 ">
           • MY EXPERTISE •
         </span>
         <h2 className="mt-4 text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight">
