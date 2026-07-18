@@ -116,9 +116,11 @@ export const skillsJson = {
       borderColor: "border-pink-900/30 hover:border-pink-500/40",
       bulletColor: "bg-pink-500",
       items: [
+        "Webflow",
         "Responsive Design",
         "UI/UX Principles",
         "Problem Solving",
+
         // "Agile Methodology",
         "Clean Code",
       ],

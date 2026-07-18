@@ -8,6 +8,7 @@ import * as Lucide from "lucide-react";
 import * as RiIcons from "react-icons/ri";
 import * as SiIcons from "react-icons/si";
 import * as BiIcons from "react-icons/bi";
+import * as DiIcons from "react-icons/di";
 import { Magnetic } from "../../animations/Magnetic";
 import { HeroData } from "../../../types/sections";
 import heroImage from "../../../../public/assets/shihab-hero-section.jpg";
@@ -25,6 +26,7 @@ const IconResolver = ({
     ...RiIcons,
     ...SiIcons,
     ...BiIcons,
+    ...DiIcons,
   };
   const ResolvedIcon = AllIcons[name];
   if (!ResolvedIcon) return <Lucide.Terminal className={className} />;
