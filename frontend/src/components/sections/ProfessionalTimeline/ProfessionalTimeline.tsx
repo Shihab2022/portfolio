@@ -1,5 +1,9 @@
+"use client";
 import { TIMELINE_CONFIG } from "@/src/data/timeLine";
-
+import {
+  FloatingTextData,
+  FloatingTextSection,
+} from "../../animations/floatingTextSection";
 function TimelineCard({
   item,
   alignment,
@@ -71,6 +75,24 @@ const ProfessionalTimeline = () => {
           animation: border-spin 7s linear infinite;
         }
       `}</style>
+
+        <FloatingTextSection
+          xAxis="0%"
+          yAxis="80%"
+          iconXAxis="-top-5"
+          iconYAxis="-right-5"
+          fun={FloatingTextData.professionalBottom}
+          icon={"</>"}
+        />
+        <FloatingTextSection
+          xAxis="2%"
+          yAxis="0%"
+          iconXAxis="-top-5"
+          iconYAxis="-right-5"
+          fun={FloatingTextData.professionalTop}
+          icon={"</>"}
+          rotate="-rotate-12"
+        />
 
         <div className="flex flex-col items-center text-center mb-20 relative z-10">
           <span className="inline-flex items-center gap-1.5 px-4 py-1 rounded-full text-[11px] font-bold tracking-[0.2em] text-indigo-400 ">
