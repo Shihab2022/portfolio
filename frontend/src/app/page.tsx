@@ -5,6 +5,7 @@ import MySkills from "../components/sections/Skills/mySkills";
 import ProfessionalTimeline from "../components/sections/ProfessionalTimeline/ProfessionalTimeline";
 import Navbar from "../components/sections/hero/navbar";
 import ContactSection from "../components/contact/ContactSection";
+import Footer from "../components/footer/Footer";
 export default function Home() {
   return (
     <>
@@ -14,6 +15,7 @@ export default function Home() {
         <MySkills />
         <ProfessionalTimeline />
         <ContactSection />
+        <Footer />
       </div>
     </>
   );
