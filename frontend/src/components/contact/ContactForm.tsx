@@ -17,7 +17,7 @@ export const ContactForm = () => {
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ delay: 0.2 }}
-      className="relative p-6 sm:p-8 rounded-[24px] border border-white/5 bg-white/[0.01] backdrop-blur-xl shadow-2xl w-full"
+      className="relative p-6 sm:p-8 rounded-3xl border border-white/5 bg-white/1 backdrop-blur-xl shadow-2xl w-full"
     >
       <form onSubmit={handleSubmit} className="space-y-5">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -131,7 +131,7 @@ export const ContactForm = () => {
         <button
           type="submit"
           disabled={isLoading}
-          className="group relative w-full inline-flex items-center justify-center gap-2 px-6 py-4 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl hover:from-blue-500 hover:to-purple-500 transition-all duration-300 transform active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-purple-900/20"
+          className="group relative w-full inline-flex items-center justify-center gap-2 px-6 py-4 text-sm font-semibold text-white bg-linear-to-r from-blue-600 to-purple-600 rounded-xl hover:from-blue-500 hover:to-purple-500 transition-all duration-300 transform active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-purple-900/20"
         >
           {isLoading ? (
             <>
@@ -154,7 +154,7 @@ export const ContactForm = () => {
             initial={{ opacity: 0, scale: 0.95, y: 10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95 }}
-            className="absolute inset-0 flex flex-col items-center justify-center p-6 bg-[#0B0F19]/95 rounded-[24px] border border-emerald-500/30 backdrop-blur-md z-20 text-center space-y-3"
+            className="absolute inset-0 flex flex-col items-center justify-center p-6 bg-[#0B0F19]/95 rounded-3xl border border-emerald-500/30 backdrop-blur-md z-20 text-center space-y-3"
           >
             <div className="w-12 h-12 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center p-2.5">
               <CheckCircle2 className="w-full h-full" />

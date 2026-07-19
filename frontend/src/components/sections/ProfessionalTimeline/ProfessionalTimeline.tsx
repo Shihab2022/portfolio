@@ -16,12 +16,9 @@ function TimelineCard({
 
   return (
     <div className="relative p-px rounded-2xl overflow-hidden group/card transition-all duration-1000 transform hover:-translate-y-1.5 ">
-      {/* Heavy-duty multi-color rotating boundary light. Displays crisp edge exclusively during active container hover */}
       <div
         className={`absolute top-1/2 left-1/2 w-[160%] h-[160%] bg-linear-to-r ${item.colorTheme.borderGlow} opacity-0 group-hover/card:opacity-100 transition-opacity duration-1000 animate-border-spin z-0 pointer-events-none`}
       />
-
-      {/* Internal Transparent Dark Surface Chamber */}
       <div className="relative bg-slate-950/40 backdrop-blur-md border border-slate-900 group-hover/card:border-transparent p-6 rounded-2xl z-10 transition-colors duration-1000">
         <span
           className={`inline-block text-[10px] font-black tracking-widest border px-3 py-1 rounded-full mb-4 ${item.colorTheme.badge}`}
@@ -44,8 +41,6 @@ function TimelineCard({
         >
           {item.description}
         </p>
-
-        {/* Stack Microbadges */}
         <div
           className={`flex flex-wrap gap-2 justify-start ${stackJustification}`}
         >
