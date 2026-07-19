@@ -47,7 +47,7 @@ export default function MySkills() {
         yAxis="10%"
         iconXAxis="-bottom-3"
         iconYAxis="-left-1"
-        fun={FloatingTextData.retryingFailedRequests}
+        fun={FloatingTextData.stateOptimization}
         icon={"</>"}
         rotate="rotate-40"
       />

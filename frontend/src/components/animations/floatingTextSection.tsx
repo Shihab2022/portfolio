@@ -73,6 +73,100 @@ export const FloatingTextData = {
       {"}"}
     </pre>
   ),
+  stateOptimization: (
+    <pre className="font-mono text-xs md:text-sm leading-relaxed m-0 pr-8">
+      <span className="text-purple-400">function</span>{" "}
+      <span className="text-gray-100">useAuthUser()</span> {"{\n"}
+      {"  "}
+      <span className="text-purple-400">const</span> [user, setUser] ={" "}
+      <span className="text-purple-400">useState</span>(
+      <span className="text-blue-400">null</span>);{"\n"}
+      {"  "}
+      <span className="text-purple-400">useEffect</span>(() =&gt; {"{\n"}
+      {"    "}
+      <span className="text-purple-400">const</span> session ={" "}
+      <span className="text-gray-100">supabase.auth.getSession();</span>
+      {"\n"}
+      {"    "}
+      <span className="text-gray-100">setUser(session?.user ?? </span>
+      <span className="text-blue-400">null</span>);{"\n"}
+      {"  }"}, []);{"\n"}
+      {"  "}
+      <span className="text-purple-400">return</span> {"{ user };"}\n{"}"}
+    </pre>
+  ),
+  authentication: (
+    <pre className="font-mono text-xs md:text-sm leading-relaxed m-0 pr-8">
+      <span className="text-purple-400">function</span>{" "}
+      <span className="text-gray-100">generateToken(userPayload)</span> {"{\n"}
+      {"  "}
+      <span className="text-purple-400">return</span>{" "}
+      <span className="text-gray-100">jwt.sign(</span>
+      {"{ ...userPayload },"}{" "}
+      <span className="text-gray-100">process.env.JWT_SECRET,</span> {"{\n"}
+      {"    "}
+      <span className="text-gray-100">expiresIn:</span>{" "}
+      <span className="text-teal-400">{"24h"}</span>
+      {"\n"}
+      {"  }"});{"\n"}
+      {"}"}
+    </pre>
+  ),
+  nextAppRouter: (
+    <pre className="font-mono text-xs md:text-sm leading-relaxed m-0 pr-8">
+      <span className="text-purple-400">export async function</span>{" "}
+      <span className="text-gray-100">POST(req)</span> {"{\n"}
+      {"  "}
+      <span className="text-purple-400">const</span> body ={" "}
+      <span className="text-purple-400">await</span>{" "}
+      <span className="text-gray-100">req.json();</span>
+      {"\n"}
+      {"  "}
+      <span className="text-purple-400">if</span> (!body.email) {"{\n"}
+      {"    "}
+      <span className="text-purple-400">return</span>{" "}
+      <span className="text-gray-100">NextResponse.json(</span>
+      {"{ error: "}
+      <span className="text-teal-400">{"Missing email"}</span>
+      {" },"} {"{ status: "}
+      <span className="text-teal-400">400</span>
+      {" });\n"}
+      {"  "}
+      {"}\n"}
+      {"  "}
+      <span className="text-purple-400">return</span>{" "}
+      <span className="text-gray-100">NextResponse.json(</span>
+      {"{ success: "}
+      <span className="text-blue-400">true</span>
+      {" },"} {"{ status: "}
+      <span className="text-teal-400">201</span>
+      {" });\n"}
+      {"}"}
+    </pre>
+  ),
+  paymentWebhook: (
+    <pre className="font-mono text-xs md:text-sm leading-relaxed m-0 pr-8">
+      <span className="text-purple-400">function</span>{" "}
+      <span className="text-gray-100">handlePaymentSuccess(session)</span>{" "}
+      {"{\n"}
+      {"  "}
+      <span className="text-purple-400">const</span> customerEmail ={" "}
+      <span className="text-gray-100">session.customer_details.email;</span>
+      {"\n"}
+      {"  "}
+      <span className="text-purple-400">await</span>{" "}
+      <span className="text-gray-100">db.user.update(</span>
+      {"{\n"}
+      {"    "}
+      <span className="text-gray-100">where:</span>{" "}
+      {"{ email: customerEmail },"}\n
+      {"    "}
+      <span className="text-gray-100">data:</span> {"{ isPremium: "}
+      <span className="text-blue-400">true</span> {"}"}\n
+      {"  }"});{"\n"}
+      {"}"}
+    </pre>
+  ),
   professionalTop: (
     <pre className="font-mono text-xs md:text-sm leading-relaxed m-0 pr-8">
       <span className="text-purple-400">SELECT</span>{" "}
@@ -197,6 +291,38 @@ export const FloatingTextData = {
       <span className="text-purple-400">return</span>{" "}
       <span className="text-teal-400">{"Keep coding responsibly"}</span>;{"\n"}
       {"}"}
+    </pre>
+  ),
+  networkingRelationships: (
+    <pre className="font-mono text-xs md:text-sm leading-relaxed m-0 pr-8">
+      <span className="text-purple-400">io.on</span>(
+      <span className="text-teal-400">{"connection"}</span>, (
+      <span className="text-gray-100">socket</span>) =&gt; {"{\n"}
+      {"  "}
+      <span className="text-gray-100">console.log(</span>
+      <span className="text-teal-400">{"New connection established"}</span>
+      <span className="text-gray-100">);</span>
+      {"\n"}
+      {"  "}
+      <span className="text-purple-400">socket.on</span>(
+      <span className="text-teal-400">{"shareThoughts"}</span>, (
+      <span className="text-gray-100">data</span>) =&gt; {"{\n"}
+      {"    "}
+      <span className="text-purple-400">socket.broadcast.emit</span>(
+      <span className="text-teal-400">{"inspireOthers"}</span>,{" "}
+      <span className="text-gray-100">data);</span>
+      {"\n"}
+      {"  "}
+      {"});"}\n
+      {"  "}
+      <span className="text-purple-400">socket.on</span>(
+      <span className="text-teal-400">{"disconnect"}</span>, () =&gt; {" {\n"}
+      {"    "}
+      <span className="text-gray-100">cleanUpEmptySpace();</span>
+      {"\n"}
+      {"  "}
+      {"});"}\n
+      {"});"}
     </pre>
   ),
 };
