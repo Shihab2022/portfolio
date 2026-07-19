@@ -2,6 +2,10 @@
 "use client";
 import { skillsJson } from "@/src/data/skills";
 import { IconResolver } from "@/src/utils/IconResolver";
+import {
+  FloatingTextData,
+  FloatingTextSection,
+} from "../../animations/floatingTextSection";
 
 export default function MySkills() {
   return (
@@ -28,7 +32,25 @@ export default function MySkills() {
           scalable and user-friendly web applications.
         </p>
       </div>
+      <FloatingTextSection
+        xAxis="2%"
+        yAxis="5%"
+        iconXAxis="-top-3"
+        iconYAxis="-right-1"
+        fun={FloatingTextData.selfImprovement}
+        icon={"</>"}
+        rotate="-rotate-10"
+      />
 
+      <FloatingTextSection
+        xAxis="70%"
+        yAxis="10%"
+        iconXAxis="-bottom-3"
+        iconYAxis="-left-1"
+        fun={FloatingTextData.retryingFailedRequests}
+        icon={"</>"}
+        rotate="rotate-40"
+      />
       {/* --- MAIN DISPLAY --- */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-7xl mx-auto items-center relative z-10">
         <div className="lg:col-span-5 flex justify-center items-center relative h-140 w-full overflow-hidden">
