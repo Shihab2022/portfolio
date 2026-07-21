@@ -39,7 +39,7 @@ export interface FooterData {
 }
 
 export const footerData: FooterData = {
-  name: "Alex Morgan",
+  name: "MD Shihab Uddin ",
   tagline:
     "Building scalable, high-performance web applications with modern technologies and exceptional user experiences.",
   availability: {

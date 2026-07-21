@@ -79,20 +79,20 @@ export const contactConfig = {
       },
     },
 
-    {
-      id: "github",
-      title: "GitHub",
-      value: "github.com/Shihab2022",
-      href: "https://github.com/Shihab2022",
-      icon: FaGithub,
-      accent: "from-gray-400 to-gray-600",
-      colorTheme: {
-        accent: "text-blue-400",
-        badge: "bg-blue-500/10 text-blue-400 border-blue-500/20",
-        node: "bg-blue-500 group-hover:bg-blue-400 group-hover:shadow-[0_0_25px_rgba(59,130,246,0.9)] group-hover:scale-130",
-        borderGlow: "from-blue-600 via-cyan-400 to-indigo-600",
-      },
-    },
+    // {
+    //   id: "github",
+    //   title: "GitHub",
+    //   value: "github.com/Shihab2022",
+    //   href: "https://github.com/Shihab2022",
+    //   icon: FaGithub,
+    //   accent: "from-gray-400 to-gray-600",
+    //   colorTheme: {
+    //     accent: "text-blue-400",
+    //     badge: "bg-blue-500/10 text-blue-400 border-blue-500/20",
+    //     node: "bg-blue-500 group-hover:bg-blue-400 group-hover:shadow-[0_0_25px_rgba(59,130,246,0.9)] group-hover:scale-130",
+    //     borderGlow: "from-blue-600 via-cyan-400 to-indigo-600",
+    //   },
+    // },
   ],
   socials: [
     {

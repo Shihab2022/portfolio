@@ -32,11 +32,11 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 sm:gap-12 items-start">
           <div className="lg:col-span-4 w-full">
             <ContactInfo />
+            <SocialLinks />
           </div>
 
           <div className="lg:col-span-6 w-full space-y-6">
             <ContactForm />
-            <SocialLinks />
           </div>
         </div>
       </div>
