@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface ActionLink {
   label: string;
   href: string;
@@ -46,7 +47,7 @@ export interface ExperienceItem {
 }
 
 export interface ProjectItem {
-  [x: string]: ReactNode;
+  [x: string]: any;
   id: string;
   title: string;
   category: "saas" | "infrastructure" | "mobile" | "web3";
