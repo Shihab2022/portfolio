@@ -4,10 +4,26 @@ import { ContactHeader } from "./ContactHeader";
 import { ContactInfo } from "./ContactInfo";
 import { ContactForm } from "./ContactForm";
 import { SocialLinks } from "./SocialLinks";
+// import {
+//   FloatingTextData,
+//   FloatingTextSection,
+// } from "../animations/floatingTextSection";
 
 export default function ContactSection() {
   return (
-    <section className="relative w-full min-h-screen py-20 px-4 sm:px-6 lg:px-8 overflow-hidden z-10 flex flex-col justify-center">
+    <section
+      id="contact"
+      className="relative w-full min-h-screen py-20 px-4 sm:px-6 lg:px-8 overflow-hidden z-10 flex flex-col justify-center"
+    >
+      {/* <FloatingTextSection
+        xAxis="70%"
+        yAxis="10%"
+        iconXAxis="-top-3"
+        iconYAxis="-right-1"
+        fun={FloatingTextData.professionalBottom}
+        icon={"</>"}
+        rotate="-rotate-12"
+      /> */}
       <div className="absolute inset-0 pointer-events-none -z-10 select-none">
         <div className="absolute top-[20%] left-[-10%] w-100 sm:w-150 h-100 sm:h-150 rounded-full bg-blue-600/10 blur-[120px]" />
         <div className="absolute bottom-[10%] right-[-10%] w-125 sm:w-175 h-125 sm:h-175 rounded-full bg-purple-600/10 blur-[140px]" />

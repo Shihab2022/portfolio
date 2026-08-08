@@ -2,14 +2,17 @@
 "use client";
 import { skillsJson } from "@/src/data/skills";
 import { IconResolver } from "@/src/utils/IconResolver";
-import {
-  FloatingTextData,
-  FloatingTextSection,
-} from "../../animations/floatingTextSection";
+// import {
+//   FloatingTextData,
+//   FloatingTextSection,
+// } from "../../animations/floatingTextSection";
 
 export default function MySkills() {
   return (
-    <section className="relative min-h-screen  text-white px-6 py-20 md:px-12 lg:px-20 overflow-hidden">
+    <section
+      id="skills"
+      className="relative min-h-screen  text-white px-6 py-20 md:px-12 lg:px-20 overflow-hidden"
+    >
       <div className="flex flex-col items-center text-center mb-20 relative z-10">
         <span className="inline-flex items-center gap-1.5 px-4 py-1 rounded-full text-[11px] font-bold tracking-[0.2em] text-indigo-400 ">
           • MY EXPERTISE •
@@ -32,7 +35,7 @@ export default function MySkills() {
           scalable and user-friendly web applications.
         </p>
       </div>
-      <FloatingTextSection
+      {/* <FloatingTextSection
         xAxis="2%"
         yAxis="5%"
         iconXAxis="-top-3"
@@ -50,7 +53,7 @@ export default function MySkills() {
         fun={FloatingTextData.stateOptimization}
         icon={"</>"}
         rotate="rotate-40"
-      />
+      /> */}
       {/* --- MAIN DISPLAY --- */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-7xl mx-auto items-center relative z-10">
         <div className="lg:col-span-5 flex justify-center items-center relative h-140 w-full overflow-hidden">

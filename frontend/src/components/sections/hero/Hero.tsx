@@ -30,8 +30,6 @@ export const Hero: React.FC<HeroProps> = ({ data }) => {
       className="relative min-h-screen w-full flex items-center justify-center overflow-hidden px-4 sm:px-8 md:px-16 lg:px-24 py-20 select-none"
       aria-label="Introduction presentation section"
     >
-      {/* <div className="absolute inset-0 z-0 bg-linear-to-br from-[#0F172A] via-[#111827] to-[#2563EB]/20" /> */}
-
       <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-purple-600/15 blur-[80px] sm:blur-[120px] animate-pulse pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-80 h-80 sm:w-112.5 sm:h-112.5 rounded-full bg-cyan-500/10 blur-[100px] sm:blur-[150px] pointer-events-none" />
 
@@ -123,7 +121,7 @@ export const Hero: React.FC<HeroProps> = ({ data }) => {
                   className={cn(
                     "relative px-6 sm:px-8 py-3.5 rounded-xl font-semibold text-sm transition-all duration-300 flex items-center gap-2",
                     cta.variant === "primary"
-                      ? "bg-linear-to-r from-blue-600 to-cyan-500 text-white shadow-[0_4px_20px_rgba(37,99,235,0.35)] hover:shadow-[0_4px_30px_rgba(37,99,235,0.5)] border border-white/10"
+                      ? "text-white bg-linear-to-r from-blue-600 to-purple-600 rounded-xl hover:from-blue-500 hover:to-purple-500 transition-all duration-300 transform active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-purple-900/20"
                       : "bg-slate-900/60 backdrop-blur-md text-slate-200 border border-white/10 hover:bg-slate-800/80",
                   )}
                 >

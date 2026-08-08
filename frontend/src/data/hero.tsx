@@ -29,9 +29,10 @@ export const heroSectionData = {
   },
   ctas: [
     {
-      label: "Hire Me",
+      label: "Resume",
       href: "#contact",
       variant: "primary",
+      icon: "RxResume",
       isExternal: false,
     },
     {

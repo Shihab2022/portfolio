@@ -82,7 +82,7 @@ export const PROJECTS: ProjectItems[] = [
       "Implemented Redux optimistic updates for instantaneous message feedback.",
     ],
     liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/Shihab2022/chat-app",
   },
   {
     id: "fixitnow-platform",
@@ -134,8 +134,8 @@ export const PROJECTS: ProjectItems[] = [
       "Built multi-field search logic capable of instant filtering across thousands of transaction logs.",
       "Engineered CSS `@media print` rules for clean, print-ready client invoice generation.",
     ],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
+    liveUrl: "https://fixitnow-frontend-theta.vercel.app/",
+    githubUrl: "https://github.com/Shihab2022/FixItNow-",
   },
   {
     id: "retail-gis-platform",
@@ -182,7 +182,8 @@ export const PROJECTS: ProjectItems[] = [
     accomplishments: [
       "Optimized client web canvas to smoothly render over 100,000 spatial data points.",
     ],
-    liveUrl: "https://example.com",
+    liveUrl:
+      "https://sp-dev.gospatic.com/catchment/sample/c4fcbc272a03aa1e58d72f22c7461d9d",
     githubUrl: "https://github.com",
   },
 ];

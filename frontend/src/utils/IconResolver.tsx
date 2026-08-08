@@ -7,6 +7,7 @@ import * as Lucide from "lucide-react";
 import * as FaIcons from "react-icons/fa";
 import * as FiIcons from "react-icons/fi";
 import * as PiIcons from "react-icons/pi";
+import * as RxResume from "react-icons/rx";
 export const IconResolver = ({
   name,
   className,
@@ -23,6 +24,7 @@ export const IconResolver = ({
     ...FaIcons,
     ...FiIcons,
     ...PiIcons,
+    ...RxResume,
   };
   const ResolvedIcon = AllIcons[name];
   if (!ResolvedIcon) return <Lucide.Terminal className={className} />;

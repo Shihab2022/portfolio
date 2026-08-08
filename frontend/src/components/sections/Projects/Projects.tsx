@@ -143,29 +143,10 @@ export function Projects() {
     <section
       ref={sectionRef}
       id="projects"
-      className="relative w-full h-screen  text-slate-100 py-6 px-4 sm:px-8 md:px-12 lg:px-20 select-none flex flex-col justify-between overflow-hidden z-10"
+      className="relative w-full  text-slate-100 py-6 px-4 sm:px-8 md:px-12 lg:px-20 select-none flex flex-col justify-between overflow-hidden z-10"
     >
       <div className="max-w-7xl mx-auto w-full h-full flex flex-col justify-between relative z-10">
-        {/* <div className="flex flex-col md:flex-row md:items-end justify-between mb-2 gap-2 shrink-0">
-          <div>
-            <span className="text-xs font-mono font-bold tracking-[0.2em] text-blue-400 uppercase block mb-1">
-              `// FEATURED WORKS & CASE STUDIES `({PROJECTS.length} STACKED)
-            </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-white tracking-tight leading-tight">
-              Featured Works & <br />
-              <span className="font-serif italic text-slate-300">
-                Engineering Innovations
-              </span>
-            </h2>
-          </div>
-
-          <p className="text-xs text-slate-400 max-w-xs font-light leading-relaxed">
-            4 interactive cards stacked below. Scroll down/up to navigate
-            through projects or click to open deep case studies.
-          </p>
-        </div> */}
-
-        <div className="flex flex-col items-center text-center mb-20 relative z-10">
+        <div className="flex flex-col items-center text-center mb-10 relative z-10">
           <span className="inline-flex items-center gap-1.5 px-4 py-1 rounded-full text-[11px] font-bold tracking-[0.2em] text-indigo-400 ">
             • FEATURED WORKS & CASE STUDIES {PROJECTS.length} STACKED •
           </span>
@@ -276,7 +257,7 @@ export function Projects() {
                     <div className="pt-3 flex flex-wrap items-center justify-between gap-3 border-t border-slate-800">
                       <button
                         onClick={() => setSelectedProject(project)}
-                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold tracking-wider transition-all group cursor-pointer shadow-md"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-white bg-linear-to-r from-blue-600 to-purple-600  hover:from-blue-500 hover:to-purple-500  duration-300 transform active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed shadow-purple-900/20 text-xs font-bold tracking-wider transition-all group cursor-pointer shadow-md"
                       >
                         <span>VIEW CASE STUDY</span>
                         <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -287,7 +268,7 @@ export function Projects() {
                           href={project.liveUrl}
                           target="_blank"
                           rel="noreferrer"
-                          className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700 transition"
+                          className="inline-flex items-center gap-1.5 px-3 py-2 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-400 transition"
                           title="Visit Live Site"
                         >
                           <ExternalLink className="w-3.5 h-3.5 text-cyan-400" />
@@ -298,7 +279,7 @@ export function Projects() {
                           href={project.githubUrl}
                           target="_blank"
                           rel="noreferrer"
-                          className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700 transition"
+                          className="inline-flex items-center gap-1.5 px-3 py-2 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-400 transition"
                           title="View Source Code"
                         >
                           <FaGithub className="w-3.5 h-3.5 text-slate-300" />

@@ -72,21 +72,13 @@ const ProfessionalTimeline = () => {
       `}</style>
 
         <FloatingTextSection
-          xAxis="0%"
-          yAxis="80%"
-          iconXAxis="-top-3"
-          iconYAxis="-right-1"
-          fun={FloatingTextData.professionalBottom}
-          icon={"</>"}
-        />
-        <FloatingTextSection
-          xAxis="2%"
-          yAxis="5%"
-          iconXAxis="-top-3"
-          iconYAxis="-right-1"
+          xAxis="72%"
+          yAxis="20%"
+          iconXAxis="-right-1"
+          iconYAxis="-top-1"
           fun={FloatingTextData.professionalTop}
           icon={"</>"}
-          rotate="-rotate-10"
+          rotate="-rotate-12"
         />
 
         <div className="flex flex-col items-center text-center mb-20 relative z-10">
