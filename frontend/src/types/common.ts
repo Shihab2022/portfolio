@@ -46,6 +46,7 @@ export interface ExperienceItem {
 }
 
 export interface ProjectItem {
+  [x: string]: ReactNode;
   id: string;
   title: string;
   category: "saas" | "infrastructure" | "mobile" | "web3";

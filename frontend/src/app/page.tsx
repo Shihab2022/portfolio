@@ -6,6 +6,7 @@ import ProfessionalTimeline from "../components/sections/ProfessionalTimeline/Pr
 import Navbar from "../components/sections/hero/navbar";
 import ContactSection from "../components/contact/ContactSection";
 import Footer from "../components/footer/Footer";
+import { Projects } from "../components/sections/Projects/Projects";
 export default function Home() {
   return (
     <>
@@ -20,6 +21,7 @@ export default function Home() {
         <Navbar />
         <Hero data={heroSectionData as any} />
         <MySkills />
+        <Projects />
         <ProfessionalTimeline />
         <ContactSection />
         <Footer />
