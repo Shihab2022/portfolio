@@ -23,7 +23,7 @@ export const useContactForm = () => {
     setIsLoading(true);
     try {
       const response = await sendEmail(data);
-      if (response?.data?.data?.id) {
+      if (response?.data?.id) {
         setIsSuccess(true);
         form.reset();
       }
