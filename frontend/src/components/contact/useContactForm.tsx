@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactSchema, ContactFormData } from "./contact-schema";
+import { sendEmail } from "@/src/utils/sendEmail";
 
 export const useContactForm = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -21,13 +22,11 @@ export const useContactForm = () => {
   const onSubmit = async (data: ContactFormData) => {
     setIsLoading(true);
     try {
-      // API integration abstraction layer
-      // e.g., await fetch('/api/contact', { method: 'POST', body: JSON.stringify(data) })
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-
-      setIsSuccess(true);
-      form.reset();
-      setTimeout(() => setIsSuccess(false), 4000);
+      const response = await sendEmail(data);
+      if (response?.data?.data?.id) {
+        setIsSuccess(true);
+        form.reset();
+      }
     } catch (error) {
       console.error("Submission failed", error);
     } finally {

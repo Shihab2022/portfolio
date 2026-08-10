@@ -9,7 +9,7 @@ export const contactSchema = z.object({
   subject: z.string().min(1, { message: "Subject is required." }),
   message: z
     .string()
-    .min(20, { message: "Message must be at least 20 characters long." }),
+    .min(10, { message: "Message must be at least 10 characters long." }),
 });
 
 export type ContactFormData = z.infer<typeof contactSchema>;
