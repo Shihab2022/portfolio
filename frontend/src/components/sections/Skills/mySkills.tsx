@@ -55,9 +55,11 @@ export default function MySkills() {
         rotate="rotate-40"
       /> */}
       {/* --- MAIN DISPLAY --- */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-7xl mx-auto items-center relative z-10">
-        <div className="lg:col-span-5 flex justify-center items-center relative h-140 w-full overflow-hidden">
-          <div className="relative w-120 h-120 md:w-135 md:h-135 flex items-center justify-center">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 max-w-7xl mx-auto items-center relative z-10">
+        {/* Left Section - Interactive Skill Orbit */}
+        <div className="lg:col-span-5 flex justify-center items-center relative w-full overflow-hidden min-h-87.5 sm:min-h-112.5">
+          <div className="relative w-full max-w-[320px] sm:max-w-105 md:max-w-120 aspect-square flex items-center justify-center">
+            {/* Background SVG Tracks */}
             <svg
               viewBox="0 0 400 400"
               className="absolute inset-0 w-full h-full pointer-events-none overflow-visible"
@@ -85,6 +87,7 @@ export default function MySkills() {
                 </linearGradient>
               </defs>
 
+              {/* Outer Tracks */}
               <path
                 d="M 200 50 A 150 150 0 0 0 200 350"
                 fill="none"
@@ -99,7 +102,7 @@ export default function MySkills() {
                 strokeDasharray="5 5"
               />
 
-              {/* Inner Track */}
+              {/* Inner Tracks */}
               <path
                 d="M 200 100 A 100 100 0 0 0 200 300"
                 fill="none"
@@ -116,39 +119,43 @@ export default function MySkills() {
               />
             </svg>
 
+            {/* Orbiting Icons Container */}
             <div className="absolute inset-0 animate-[spin_100s_linear_infinite] hover:[animation-play-state:paused]">
               {skillsJson.orbitNodes.map((node: any) => (
                 <div
                   key={node.id}
-                  className={`absolute p-3 rounded-full bg-[#040818] border-2 shadow-xl hover:scale-110 transition-transform duration-300 cursor-pointer ${node.positionClass} ${node.color}`}
+                  className={`absolute p-2 sm:p-3 rounded-full bg-[#040818] border-2 shadow-xl hover:scale-110 transition-transform duration-300 cursor-pointer ${node.positionClass} ${node.color}`}
                 >
-                  <div className="w-6 h-6 flex items-center justify-center animate-[spin_25s_linear_infinite] [animation-direction:reverse] parent-hover:paused">
+                  <div className="w-4 h-4 sm:w-6 sm:h-6 flex items-center justify-center animate-[spin_25s_linear_infinite] [animation-direction:reverse] parent-hover:paused">
                     <IconResolver name={node.icon} className="w-full h-full" />
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-56 h-56 rounded-full bg-[#050b1a] border border-slate-800 flex flex-col items-center justify-center p-6 text-center shadow-[inset_0_0_25px_rgba(99,102,241,0.18)] z-10">
-              <div className="text-4xl mb-2 bg-linear-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent font-bold">
+            {/* Center Card */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 sm:w-52 sm:h-52 md:w-56 md:h-56 rounded-full bg-[#050b1a] border border-slate-800 flex flex-col items-center justify-center p-4 sm:p-6 text-center shadow-[inset_0_0_25px_rgba(99,102,241,0.18)] z-10">
+              <div className="text-2xl sm:text-4xl mb-1 sm:mb-2 bg-linear-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent font-bold">
                 &lt;/&gt;
               </div>
-              <h3 className="text-xl font-bold leading-tight tracking-wide text-slate-100">
+              <h3 className="text-sm sm:text-xl font-bold leading-tight tracking-wide text-slate-100">
                 Full Stack
                 <br />
                 Developer
               </h3>
-              <p className="text-xs text-slate-400 mt-2.5 max-w-36 leading-normal">
+              <p className="text-[10px] sm:text-xs text-slate-400 mt-1 sm:mt-2.5 max-w-28 sm:max-w-36 leading-normal">
                 Passionate about building impactful digital experiences
               </p>
             </div>
           </div>
         </div>
+
+        {/* Right Section - Category Cards */}
         <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
           {skillsJson.categories.map((cat) => (
             <div
               key={cat.id}
-              className={`p-5 rounded-xl  border backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 ${cat.borderColor}`}
+              className={`p-5 rounded-xl border backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 ${cat.borderColor}`}
             >
               <div className="flex items-center gap-2.5 mb-5">
                 <div
@@ -176,7 +183,6 @@ export default function MySkills() {
           ))}
         </div>
       </div>
-
       <div className="mt-20 max-w-7xl mx-auto z-10 relative">
         <div className="p-6 md:p-8 rounded-3xl  border border-slate-800/80 backdrop-blur-md flex flex-col xl:flex-row items-center justify-between gap-8">
           {/* Label side */}
