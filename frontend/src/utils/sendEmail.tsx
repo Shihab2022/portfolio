@@ -6,32 +6,21 @@ import { ContactFormData } from "../components/contact/contact-schema";
 
 export async function sendEmail(params: ContactFormData) {
   try {
-    // 1. Fetch key from environment variables (checking both server and public keys)
-    const apiKey =
-      process.env.RESEND_API_KEY || process.env.NEXT_PUBLIC_RESEND_API_KEY;
-    const recipientEmail =
-      process.env.CONTACT_RECIPIENT_EMAIL ||
-      process.env.NEXT_PUBLIC_CONTACT_RECIPIENT_EMAIL;
+    // 1. Fetch keys from environment variables (handles both key conventions)
+    const apiKey = process.env.RESEND_API_KEY || process.env.NEXT_PUBLIC_RESEND_API_KEY;
+    const recipientEmail = process.env.CONTACT_RECIPIENT_EMAIL || process.env.NEXT_PUBLIC_CONTACT_RECIPIENT_EMAIL;
 
     if (!apiKey) {
       console.error("Missing RESEND_API_KEY environment variable on server.");
-      return {
-        success: false,
-        error: "Server Configuration Error: Missing API Key",
-      };
+      return { success: false, error: "Server Configuration Error: Missing API Key" };
     }
 
     if (!recipientEmail) {
-      console.error(
-        "Missing CONTACT_RECIPIENT_EMAIL environment variable on server.",
-      );
-      return {
-        success: false,
-        error: "Server Configuration Error: Missing Recipient Email",
-      };
+      console.error("Missing CONTACT_RECIPIENT_EMAIL environment variable on server.");
+      return { success: false, error: "Server Configuration Error: Missing Recipient Email" };
     }
 
-    // 2. Instantiate Resend dynamically inside the function execution
+    // 2. Instantiate Resend dynamically inside function execution
     const resend = new Resend(apiKey);
 
     const { name, email, company, subject, message } = params;
@@ -41,7 +30,7 @@ export async function sendEmail(params: ContactFormData) {
     }
 
     const formattedCompany = company ? ` | ${company}` : "";
-    const emailSubject = `📥 [ Portfolio email ] ${subject} — ${name}${formattedCompany}`;
+    const emailSubject = `📥 [Inquiry] ${subject} — ${name}${formattedCompany}`;
 
     const luxuryHtml = `
       <!DOCTYPE html>
@@ -89,6 +78,13 @@ export async function sendEmail(params: ContactFormData) {
                       <span style="font-size: 11px; text-transform: uppercase; color: #94A3B8; display: block; margin-bottom: 8px;">Message Content</span>
                       <div style="background-color: rgba(0, 0, 0, 0.3); border-left: 3px solid #818CF8; padding: 20px; border-radius: 8px; color: #CBD5E1; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">${message}</div>
                     </div>
+                    
+                    <!-- Direct Reply CTA Button inside the email -->
+                    <div style="margin-top: 32px; text-align: center;">
+                      <a href="mailto:${email}?subject=Re:%20${encodeURIComponent(subject)}" style="display: inline-block; background-color: #6366F1; color: #FFFFFF; font-weight: 600; font-size: 14px; padding: 14px 28px; border-radius: 10px; text-decoration: none;">
+                        Reply Directly to ${name}
+                      </a>
+                    </div>
                   </td>
                 </tr>
               </table>
@@ -102,7 +98,7 @@ export async function sendEmail(params: ContactFormData) {
     const { data, error } = await resend.emails.send({
       from: "Contact Form <onboarding@resend.dev>",
       to: [recipientEmail],
-      replyTo: email,
+      replyTo: email, // Direct reply to sender restored
       subject: emailSubject,
       html: luxuryHtml,
     });
@@ -115,9 +111,6 @@ export async function sendEmail(params: ContactFormData) {
     return { success: true, data };
   } catch (err: any) {
     console.error("Server Action Exception:", err);
-    return {
-      success: false,
-      error: err?.message || "An unexpected error occurred.",
-    };
+    return { success: false, error: err?.message || "An unexpected error occurred." };
   }
 }
