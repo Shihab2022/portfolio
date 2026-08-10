@@ -1,3 +1,4 @@
+import { resumeDownloadUrl } from "@/src/data/common";
 import { contactConfig } from "@/src/data/contact";
 import { motion } from "framer-motion";
 import { Download } from "lucide-react";
@@ -47,7 +48,9 @@ export default function FooterBrand({ name, tagline }: FooterBrandProps) {
         </div>
 
         <a
-          href={contactConfig?.status.resumeUrl}
+          href={resumeDownloadUrl}
+          target={"_blank"}
+          rel={"noopener noreferrer"}
           download
           className="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-semibold text-slate-900 bg-white hover:bg-slate-100 rounded-xl transition-all duration-200 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-emerald-500/50"
         >

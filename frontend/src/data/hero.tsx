@@ -1,3 +1,5 @@
+import { resumeDownloadUrl } from "./common";
+
 export const heroSectionData = {
   availability: {
     status: "available",
@@ -30,10 +32,10 @@ export const heroSectionData = {
   ctas: [
     {
       label: "Resume",
-      href: "#contact",
+      href: resumeDownloadUrl,
       variant: "primary",
       icon: "RxResume",
-      isExternal: false,
+      isExternal: true,
     },
     {
       label: "Source Code",

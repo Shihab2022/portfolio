@@ -11,7 +11,6 @@ import heroImage from "../../../../public/assets/shihab-hero-section.jpg";
 import { cn } from "@/src/utils/utils";
 import { IconResolver } from "@/src/utils/IconResolver";
 import FloatingIconsSection from "../../animations/floatingIconsSection";
-
 export interface HeroProps {
   data: HeroData;
 }
@@ -24,7 +23,6 @@ export const Hero: React.FC<HeroProps> = ({ data }) => {
     }, 3500);
     return () => clearInterval(internalTimer);
   }, [data.titles.length]);
-
   return (
     <section
       className="relative min-h-screen w-full flex items-center justify-center overflow-hidden px-4 sm:px-8 md:px-16 lg:px-24 py-20 select-none"

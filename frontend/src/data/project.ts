@@ -26,8 +26,61 @@ export interface ProjectItems {
 
 export const PROJECTS: ProjectItems[] = [
   {
-    id: "chatty-app",
+    id: "fixitnow-platform",
     number: "01",
+    year: "2026",
+    title: "FixItNow",
+    subtitle: "Service Booking & Payment Management Portal",
+    category: "Enterprise Web App • Dynamic Billing & Payments",
+    description:
+      "An end-to-end service marketplace connecting clients with field specialists. Features real-time payment tracking, dynamic dispatching, and custom browser-driven PDF invoice exports.",
+    image:
+      "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1200&auto=format&fit=crop",
+    techCategorized: {
+      frontend: ["Next.js (App Router)", "React", "TypeScript", "Tailwind CSS"],
+      backend: [
+        "Node.js",
+        "RESTful API Integration",
+        "Middleware Authentication",
+      ],
+      databaseAndDevOps: [
+        "PostgreSQL",
+        "CSS Print Engine",
+        "Vercel Deployment",
+      ],
+    },
+    allTech: [
+      "Next.js (App Router)",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Node.js",
+      "REST APIs",
+    ],
+    challenges:
+      "Designing print-optimized, shadow-free HTML/CSS receipt layouts that automatically strip navigation chrome and drop shadows during native browser PDF printing.",
+    architectureDetails:
+      "Utilizes Next.js App Router for server-rendered page shells and client-side dynamic search hooks. Payment states stream through unified API service abstraction layers.",
+    apiOrSocketHighlights: [
+      "API Route: GET /api/payments/history?status=PAID",
+      "API Route: POST /api/bookings/assign-technician",
+      "Print trigger utility: window.print() with custom @media CSS rules",
+    ],
+    features: [
+      "Live payment tracking (PAID, PENDING, FAILED) with dynamic status badges",
+      "Print-optimized popup receipt window for client PDF generation",
+      "Multi-parameter search filtering across Service Title, Booking ID, and Status",
+    ],
+    accomplishments: [
+      "Built multi-field search logic capable of instant filtering across thousands of transaction logs.",
+      "Engineered CSS `@media print` rules for clean, print-ready client invoice generation.",
+    ],
+    liveUrl: "https://fixitnow-frontend-theta.vercel.app/",
+    githubUrl: "https://github.com/Shihab2022/FixItNow-",
+  },
+  {
+    id: "chatty-app",
+    number: "02",
     year: "2026",
     title: "Chatty",
     subtitle: "Real-Time Group Messaging & Communication Engine",
@@ -81,65 +134,13 @@ export const PROJECTS: ProjectItems[] = [
       "Achieved sub-50ms latency across high-frequency message rooms.",
       "Implemented Redux optimistic updates for instantaneous message feedback.",
     ],
-    liveUrl: "https://example.com",
+    liveUrl: "https://chat-app-lyart-nine-78.vercel.app/",
     githubUrl: "https://github.com/Shihab2022/chat-app",
   },
-  {
-    id: "fixitnow-platform",
-    number: "02",
-    year: "2026",
-    title: "FixItNow",
-    subtitle: "Service Booking & Payment Management Portal",
-    category: "Enterprise Web App • Dynamic Billing & Payments",
-    description:
-      "An end-to-end service marketplace connecting clients with field specialists. Features real-time payment tracking, dynamic dispatching, and custom browser-driven PDF invoice exports.",
-    image:
-      "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1200&auto=format&fit=crop",
-    techCategorized: {
-      frontend: ["Next.js (App Router)", "React", "TypeScript", "Tailwind CSS"],
-      backend: [
-        "Node.js",
-        "RESTful API Integration",
-        "Middleware Authentication",
-      ],
-      databaseAndDevOps: [
-        "PostgreSQL",
-        "CSS Print Engine",
-        "Vercel Deployment",
-      ],
-    },
-    allTech: [
-      "Next.js (App Router)",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Node.js",
-      "REST APIs",
-    ],
-    challenges:
-      "Designing print-optimized, shadow-free HTML/CSS receipt layouts that automatically strip navigation chrome and drop shadows during native browser PDF printing.",
-    architectureDetails:
-      "Utilizes Next.js App Router for server-rendered page shells and client-side dynamic search hooks. Payment states stream through unified API service abstraction layers.",
-    apiOrSocketHighlights: [
-      "API Route: GET /api/payments/history?status=PAID",
-      "API Route: POST /api/bookings/assign-technician",
-      "Print trigger utility: window.print() with custom @media CSS rules",
-    ],
-    features: [
-      "Live payment tracking (PAID, PENDING, FAILED) with dynamic status badges",
-      "Print-optimized popup receipt window for client PDF generation",
-      "Multi-parameter search filtering across Service Title, Booking ID, and Status",
-    ],
-    accomplishments: [
-      "Built multi-field search logic capable of instant filtering across thousands of transaction logs.",
-      "Engineered CSS `@media print` rules for clean, print-ready client invoice generation.",
-    ],
-    liveUrl: "https://fixitnow-frontend-theta.vercel.app/",
-    githubUrl: "https://github.com/Shihab2022/FixItNow-",
-  },
+
   {
     id: "retail-gis-platform",
-    number: "04",
+    number: "03",
     year: "2026",
     title: "Retail GIS Intelligence",
     subtitle: "Location Analytics & Spatial Advisory Platform",

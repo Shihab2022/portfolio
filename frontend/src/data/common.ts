@@ -133,3 +133,6 @@ export const floatingIcons = [
     duration: 7.0,
   },
 ];
+
+export const resumeDownloadUrl =
+  "https://drive.google.com/file/d/1fp4fqr4ZxXUUhYDKXK66ZHJNA5VEAX8S/view";
