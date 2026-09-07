@@ -3,9 +3,11 @@
 my-portfolio/
 ├── public/ # Static media (profile images, project mockups, icons)
 │ ├── images/
-│ └── favicon.ico
+│ ├── favicon.svg      # Brand favicon (SVG)
+│ └── favicon.png      # Brand favicon (PNG / Apple touch icon)
 ├── src/
 │ ├── app/ # Next.js App Router root
+│ │ ├── favicon.ico    # Brand favicon (multi-size, auto-served by Next.js)
 │ │ ├── layout.tsx # Main global configuration layout (Providers, Fonts)
 │ │ ├── page.tsx # Main Portfolio Landing Page (Home, About, Skills, Projects, Contact)
 │ │ │
