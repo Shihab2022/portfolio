@@ -2,7 +2,7 @@ import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
 import {
   FaGithub,
   FaLinkedin,
-  FaXTwitter,
+  // FaXTwitter,
   FaFacebook,
   FaWhatsapp,
 } from "react-icons/fa6";
@@ -107,12 +107,12 @@ export const contactConfig = {
       icon: FaLinkedin,
       color: "hover:text-blue-400 hover:shadow-blue-500/20",
     },
-    {
-      name: "Twitter",
-      href: "https://twitter.com",
-      icon: FaXTwitter,
-      color: "hover:text-sky-400 hover:shadow-sky-400/20",
-    },
+    // {
+    //   name: "Twitter",
+    //   href: "https://twitter.com",
+    //   icon: FaXTwitter,
+    //   color: "hover:text-sky-400 hover:shadow-sky-400/20",
+    // },
     {
       name: "Facebook",
       href: "https://www.facebook.com/mdshihab.uddin.92372446",

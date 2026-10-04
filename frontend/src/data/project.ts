@@ -134,8 +134,84 @@ export const PROJECTS: ProjectItems[] = [
     githubUrl: "https://github.com/Shihab2022/FixItNow-",
   },
   {
-    id: "chatty-app",
+    id: "skillgauge-platform",
     number: "02",
+    year: "2025",
+    title: "SkillGauge",
+    subtitle: "Developer Assessment, Interview & Hiring Analytics Platform",
+    category: "Enterprise Web App • Assessments, AI Interviews & Payments",
+    description:
+      "A B2B + B2C technical hiring platform where companies run coding / MCQ / written assessments with server-timed attempts, proctored AI video interviews and competitions — while individual developers practise in a problem bank, sit technology exams in a browser compiler, and keep shareable scorecards. Features credit-based billing, results / reports analytics, and automated email notifications.",
+    image:
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop",
+    techCategorized: {
+      frontend: [
+        "Next.js (App Router)",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Monaco Editor + React Hook Form",
+        "Recharts",
+      ],
+      backend: [
+        "Node.js",
+        "Express",
+        "RESTful API Integration",
+        "Middleware Authentication (JWT)",
+        "Nodemailer Email + Redis Cached Analytics",
+      ],
+      databaseAndDevOps: [
+        "PostgreSQL",
+        "Prisma ORM",
+        "SSLCOMMERZ Payments",
+        "Swagger UI + Vitest",
+        "Vercel Deployment",
+      ],
+    },
+    allTech: [
+      "Next.js (App Router)",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "Prisma ORM",
+      "Redis Analytics Cache",
+      "SSLCOMMERZ",
+      "Monaco Editor",
+      "Recharts",
+    ],
+    challenges:
+      "Making the server the single source of truth for exam timers with auto-submit on expiry while never executing candidate code on the API server — plus scoring proctoring signals (tab switch, copy/paste, fullscreen exit) into a reviewable risk score, and marking AI video-interview answers with feedback and hiring recommendations.",
+    architectureDetails:
+      "Utilizes Next.js App Router for server-rendered shells and client-side timed exam, practice and interview hooks. Assessment lifecycles, attempts, submissions, evaluations, payments and interview sessions stream through unified Express + Prisma service layers backed by PostgreSQL with Redis-cached reports.",
+    apiOrSocketHighlights: [
+      "API Route: POST /assessments/:id/attempts/start — start server-timed attempt with expiry clock",
+      "API Route: GET /attempts/:id/time — server-authoritative remaining time + auto-submit",
+      "API Route: GET /payments — payment history with live transaction status (PAID / PENDING / FAILED)",
+      "API Route: GET /assessments/:id/report — rankings, question performance + CSV export",
+      "API Route: POST /interviews/:id/sessions/:sessionId/review — AI marks, feedback & hiring decision",
+    ],
+    features: [
+      "Proctored AI video interviews — ~10 questions per technology, 5-min timers, hints, critical-violation auto-terminate and AI marking",
+      "Automated email engine — verification, invitations, results, payment success/failed and expiry reminders with audit logs",
+      "Role-based dashboards (Candidate / Recruiter / Company / Admin) with full RBAC + company join codes",
+      "Real-time assessment lifecycle (DRAFT → PUBLISHED → ACTIVE → CLOSED → ARCHIVED) with invite → exam-link → result emails",
+      "Problem bank + practice arena + online compiler — coding, MCQ and written with test cases and full-text search",
+      "SSLCOMMERZ credit packages with payment history, status badges, idempotent callbacks and company balance",
+    ],
+    accomplishments: [
+      "Engineered a server-clock exam engine with frozen answers on submit, anti-cheating timeline and risk scoring for reviewers.",
+      "Built a complete evaluation pipeline — auto MCQ scoring, manual written review, sandboxed coding architecture and skill breakdowns.",
+      "Designed credit-based monetization with verified SSLCOMMERZ flow, company analytics, and CSV-ready hiring reports.",
+    ],
+    liveUrl: "https://developer-assessment-self.vercel.app/", // TODO: add your live URL
+    githubUrl: "https://github.com/Shihab2022/Developer-Assessment", // TODO: add your GitHub URL
+  },
+  {
+    id: "chatty-app",
+    number: "03",
     year: "2026",
     title: "Chatty",
     subtitle: "Real-Time Group Messaging & Communication Engine",
@@ -256,7 +332,7 @@ export const PROJECTS: ProjectItems[] = [
 
   {
     id: "retail-gis-platform",
-    number: "03",
+    number: "04",
     year: "2026",
     title: "Retail GIS Intelligence",
     subtitle: "Location Analytics & Spatial Advisory Platform",

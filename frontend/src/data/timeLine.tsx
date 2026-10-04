@@ -1,7 +1,7 @@
 export const TIMELINE_CONFIG = [
   {
     id: "vortex-labs",
-    period: "Jan 2024 - Present",
+    period: "Jan 2024 -  Aug 2026",
     role: "Full-stack Developer",
     company: "Spatic",
     description:

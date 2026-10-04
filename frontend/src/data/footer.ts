@@ -87,6 +87,7 @@ export const footerData: FooterData = {
     { name: "React" },
     { name: "TypeScript" },
     { name: "Tailwind CSS" },
-    { name: "Framer Motion" },
+    { name: "Node.js" },
+    { name: "PostgreSQL" },
   ],
 };
